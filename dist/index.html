@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fcf6e9">
+  <meta name="description" content="Discover things to do, learn and try near you. Explore Slamsbox, a small preview of possibilities around the corner.">
+  <title>Slamsbox — Around the corner.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#activities">Skip to activities</a>
+  <div class="hero-wrap">
+    <header class="site-header container">
+      <a href="./" class="wordmark" aria-label="Slamsbox home">Slamsbox<span class="logo-dot">✳</span></a>
+      <nav aria-label="Main navigation"><a href="#activities">Activities</a><a href="#collections">Collections</a></nav>
+    </header>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow">A little curiosity. A world nearby.</p><h1 id="hero-title">Around the<br>corner.</h1><p class="hero-subtitle">Discover things to do, learn and try near you.</p></div>
+    </section>
+  </div>
+  <main>
+    <section class="search-section container" aria-label="Find an activity">
+      <div class="search-panel">
+        <form id="nearby-form" class="nearby-form">
+          <div class="field postal-field"><label for="postal">Postal code</label><input id="postal" name="postal" autocomplete="postal-code" placeholder="Your postal code" maxlength="10" required></div>
+          <div class="field age-field"><label for="age">Age</label><input id="age" name="age" type="number" inputmode="numeric" min="1" max="120" placeholder="e.g. 16" required></div>
+          <div class="field distance-field"><label for="radius">Distance</label><select id="radius" name="radius" required><option value="1">1 km</option><option value="5" selected>5 km</option><option value="10">10 km</option><option value="25">25 km</option></select></div>
+          <button type="submit" class="primary-button">Explore nearby <span aria-hidden="true">↗</span></button>
+        </form>
+        <span class="search-or">or</span>
+        <form id="activity-form" role="search" class="activity-form"><label for="activity" class="sr-only">Search an activity</label><input id="activity" type="search" placeholder="Search an activity, e.g. Santa parade" required><button type="submit" aria-label="Search activities"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.3"/><path d="m16 16 5 5"/></svg></button></form>
+      </div>
+      <div class="search-help"><p>A small preview, with one real activity to discover.</p><div><button type="button" id="try-example">Try an example</button><span aria-hidden="true"> · </span><button id="coverage-toggle" type="button" aria-expanded="false" aria-controls="coverage">Postal code coverage</button></div></div>
+      <div id="coverage" class="coverage" hidden><strong>Nearby search: Mississauga preview</strong><p>Supported postal codes: L5B 3C9 (Celebration Square), L5B 3C1 (Civic Centre), and L5G 1C8 (Port Credit Library).</p><p>We use the named public landmark for each code, not your exact location. Distances are approximate straight-line distances to Celebration Square, where pre-parade activities begin. Your selected radius is applied to that distance, not walking, driving, or the parade route. Age is checked against the listing’s all-ages eligibility. Nothing you enter is saved.</p></div>
+      <p id="form-message" role="status" class="form-message"></p>
+    </section>
+    <section id="results" class="container results-section" aria-labelledby="results-title" hidden>
+      <div class="section-heading"><h2 id="results-title" tabindex="-1">Search results</h2><button id="clear-search" class="text-button">Clear search <span aria-hidden="true">×</span></button></div>
+      <p id="results-note" class="results-note"></p><div id="results-list"></div>
+    </section>
+    <section id="activities" class="container categories-section" aria-labelledby="categories-title">
+      <div class="section-heading"><h2 id="categories-title">Browse by category</h2><button type="button" id="all-categories" class="text-button" aria-expanded="false" aria-controls="category-grid">See all 16 categories <span aria-hidden="true">↗</span></button></div>
+      <div id="category-grid" class="category-grid"></div>
+    </section>
+    <section class="container ideas-section" aria-labelledby="ideas-title">
+      <div class="section-heading"><h2 id="ideas-title">Ideas to explore</h2><span class="section-aside">A little something to look forward to</span></div>
+      <div id="featured-list"></div>
+    </section>
+    <section id="collections" class="collections-section" aria-labelledby="collections-title">
+      <div class="container"><div class="section-heading"><h2 id="collections-title">Explore a collection</h2><span class="section-aside">Follow your curiosity</span></div>
+        <div class="collection-grid">
+          <button class="collection-card" data-collection="The outdoors"><img src="assets/outdoors.webp" alt="Two friends exploring a leafy woodland trail" loading="lazy"><span>The outdoors <span aria-hidden="true">↗</span></span></button>
+          <button class="collection-card" data-collection="Creative spaces"><img src="assets/creative.webp" alt="A sunlit creative desk with paints, books and a camera" loading="lazy"><span>Creative spaces <span aria-hidden="true">↗</span></span></button>
+          <button class="collection-card" data-collection="Community life"><img src="assets/community.webp" alt="Neighbours gathering around a stage in a leafy park" loading="lazy"><span>Community life <span aria-hidden="true">↗</span></span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer container"><a href="./" class="wordmark">Slamsbox</a><p>Good things happen close to home.</p><span>First edition · A small public preview</span></footer>
+  <dialog id="event-dialog" aria-labelledby="event-title"><button type="button" id="close-dialog" class="close-dialog" aria-label="Close event details">×</button><div id="event-detail"></div></dialog>
+</body>
+</html>
