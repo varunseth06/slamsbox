@@ -1,4 +1,4 @@
-# Afterclass preview sources
+# Slamsbox preview sources
 
 Retrieved and checked on **2026-11-12**. The preview contains one event listing. The public addresses below are used as approximate postal-code search anchors, not as users' exact locations or postal-area centroids.
 

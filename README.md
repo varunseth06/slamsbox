@@ -8,7 +8,7 @@ A small, static first version of a neighbourhood activity discovery site, built 
 
 No dependencies, accounts, database, API keys, or build step are needed. Serve `dist/` with any static HTTP server. Use `npm run check` for JavaScript syntax checks and `npm test` for matching, empty states, postal validation, radius filtering, and event facts.
 
-The `main` branch's GitHub Actions workflow tests and publishes `dist/` to GitHub Pages. All application source, generated illustrations, tests, and deployment configuration live in this repository. GitHub Pages is configured to use GitHub Actions.
+The `main` branch's GitHub Actions workflow tests and publishes `dist/` to GitHub Pages. All application source, generated illustrations, tests, and deployment configuration live in this repository. GitHub Pages was initialized using the static `gh-pages` branch; the `main` workflow also deploys its tested artifact through GitHub Actions.
 
 ## Scope
 
