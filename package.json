@@ -4,5 +4,9 @@
   "private": true,
   "type": "module",
   "description": "A small, static preview for discovering things to do nearby.",
-  "scripts": { "test": "node --test tests/*.test.mjs", "check": "node --check dist/app.js && node --check dist/data.js" }
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check dist/app.js && node --check dist/data.js",
+    "publish": "node scripts/publish.mjs"
+  }
 }
